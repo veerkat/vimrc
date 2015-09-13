@@ -2,17 +2,18 @@ syntax enable
 syntax on
 set number
 set cursorline
+set t_Co=256
+
 
 if has('gui_running')
 	"let g:winManagerWindowLayout='FileExplorer|TagList'
 	
-	set background=dark
-	colorscheme solarized
+	"set background=dark
+	"colorscheme solarized
+	colorscheme dracula
 	set guifont=Inconsolata\ for\ Powerline:h16
-	"set guifont=Droid\ Sans\ Mono\ for\ Powerline:h15
 else
 	colorscheme Tomorrow-Night-Eighties
-	"colorscheme dracula
 endif
 
 "Add 80 column line
@@ -55,6 +56,8 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/gitv'
 Plugin 'sjl/gundo.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/vimshell.vim'
 "Plugin 'flazz/vim-colorschemes'
 "Plugin 'zenorocha/dracula-theme'
 "Plugin 'plasticboy/vim-markdown'
@@ -69,6 +72,15 @@ Plugin 'a.vim'
 Plugin 'bufexplorer.zip'
 Plugin 'taglist.vim'
 Plugin 'grep.vim'
+Plugin 'flazz/vim-colorschemes'
+
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'fatih/vim-go'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'rust-lang/rust.vim'
+Plugin 'ryanss/vim-hackernews'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 " Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
@@ -100,7 +112,7 @@ filetype plugin indent on    " required
 set completeopt = "menuone"
 
 "Configure YouCompleteMe
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let g:ycm_path_to_python_interpreter = '/Users/veerkat/.virtualenvs/py2env/bin/python'
 "let g:ycm_add_preview_to_completeopt = 1 
 "let g:ycm_autoclose_preview_window_after_completion = 1
 "let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -160,7 +172,7 @@ let g:tagbar_iconchars = ['▸', '▾']
 "Configure ultisnips 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-m>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
 " If you want :UltiSnipsEdit to split your window.
