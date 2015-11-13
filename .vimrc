@@ -10,7 +10,7 @@ if has('gui_running')
 	
 	"set background=dark
 	"colorscheme solarized
-	colorscheme dracula
+	colorscheme molokai
 	set guifont=Inconsolata\ for\ Powerline:h16
 else
 	colorscheme Tomorrow-Night-Eighties
@@ -19,6 +19,11 @@ endif
 "Add 80 column line
 let &colorcolumn="81,".join(range(120,999),",")
 "end
+
+filetype plugin indent on
+autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype coffee setlocal ts=2 sts=2 sw=2 expandtab
 
 "Configure Vundle
 
@@ -34,6 +39,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'pangloss/vim-javascript'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
@@ -41,7 +48,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'nvie/vim-flake8'
 "Plugin 'davidhalter/jedi-vim'
-Plugin 'jmcantrell/vim-virtualenv'
+"Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'hynek/vim-python-pep8-indent'
 "Plugin 'kchmck/vim-coffee-script'
 " Track the engine.
@@ -58,15 +65,11 @@ Plugin 'gregsexton/gitv'
 Plugin 'sjl/gundo.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/vimshell.vim'
+Plugin 'kien/ctrlp.vim'
 "Plugin 'flazz/vim-colorschemes'
 "Plugin 'zenorocha/dracula-theme'
 "Plugin 'plasticboy/vim-markdown'
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
+
 Plugin 'winmanager'
 Plugin 'a.vim'
 Plugin 'bufexplorer.zip'
@@ -78,7 +81,6 @@ Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'fatih/vim-go'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'rust-lang/rust.vim'
-Plugin 'ryanss/vim-hackernews'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 " Git plugin not hosted on GitHub
@@ -112,7 +114,7 @@ filetype plugin indent on    " required
 set completeopt = "menuone"
 
 "Configure YouCompleteMe
-let g:ycm_path_to_python_interpreter = '/Users/veerkat/.virtualenvs/py2env/bin/python'
+let g:ycm_path_to_python_interpreter = '/Users/admin/.virtualenvs/momoso/bin/python'
 "let g:ycm_add_preview_to_completeopt = 1 
 "let g:ycm_autoclose_preview_window_after_completion = 1
 "let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -152,7 +154,9 @@ endfunction
 function! NERDTree_IsValid()
 	return 1
 endfunction
-let g:winManagerWindowLayout='NERDTree|TagList'
+"let g:winManagerWindowLayout='NERDTree|TagList'
+let g:winManagerWindowLayout='NERDTree'
+let NERDTreeIgnore = ['\.pyc$']
 "end
 
 nmap wm :if IsWinManagerVisible() <BAR> WMToggle<CR> <BAR> else <BAR> WMToggle<CR>:q<CR> endif <CR><CR>
