@@ -114,7 +114,7 @@ filetype plugin indent on    " required
 set completeopt = "menuone"
 
 "Configure YouCompleteMe
-let g:ycm_path_to_python_interpreter = '/Users/admin/.virtualenvs/momoso/bin/python'
+let g:ycm_path_to_python_interpreter = 'usr/local/bin/python'
 "let g:ycm_add_preview_to_completeopt = 1 
 "let g:ycm_autoclose_preview_window_after_completion = 1
 "let g:ycm_autoclose_preview_window_after_insertion = 1
