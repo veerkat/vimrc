@@ -23,7 +23,7 @@ let &colorcolumn="81,".join(range(120,999),",")
 filetype plugin indent on
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype coffee setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype erlang setlocal ts=4 sts=4 sw=4 expandtab
 
 "Configure Vundle
 
@@ -39,6 +39,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'scrooloose/syntastic'
+Plugin 'jimenezrick/vimerl'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'bling/vim-airline'
@@ -48,9 +50,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'nvie/vim-flake8'
 "Plugin 'davidhalter/jedi-vim'
-"Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'hynek/vim-python-pep8-indent'
-"Plugin 'kchmck/vim-coffee-script'
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 
@@ -63,12 +63,9 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/gitv'
 Plugin 'sjl/gundo.vim'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/vimshell.vim'
 Plugin 'kien/ctrlp.vim'
 "Plugin 'flazz/vim-colorschemes'
 "Plugin 'zenorocha/dracula-theme'
-"Plugin 'plasticboy/vim-markdown'
 
 Plugin 'winmanager'
 Plugin 'a.vim'
@@ -80,7 +77,6 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'fatih/vim-go'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'rust-lang/rust.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 " Git plugin not hosted on GitHub
@@ -114,7 +110,7 @@ filetype plugin indent on    " required
 set completeopt = "menuone"
 
 "Configure YouCompleteMe
-let g:ycm_path_to_python_interpreter = 'usr/local/bin/python'
+let g:ycm_path_to_python_interpreter = '/Users/veerkat/.virtualenvs/py2vim/bin/python'
 "let g:ycm_add_preview_to_completeopt = 1 
 "let g:ycm_autoclose_preview_window_after_completion = 1
 "let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -196,3 +192,11 @@ if has("gui_macvim")
     set shell=/bin/bash\ -l
 endif
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
