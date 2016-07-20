@@ -117,22 +117,7 @@ let g:ycm_path_to_python_interpreter = '/Users/veerkat/.virtualenvs/py2vim/bin/p
 "End
 
 "Configure Startify
-let g:startify_custom_header = [
-	\ '    ┏┓   ┏┓                                             ',
-	\ '   ┏┛┻━━━┛┻┓                                            ',
-	\ '   ┃   ━ 　┃                                            ',
-	\ '   ┃ ┳┛ ┗┳ ┃                                            ',
-	\ '   ┃ 　　　┃                                            ',
-	\ '   ┃   ┻   ┃    __      ___            ______ _  __     ',
-	\ '   ┗━┓ 　┏━┛    \ \    / (_)           |____  | / /     ',
-	\ '     ┃   ┃       \ \  / / _ _ __ ___       / / / /__    ',
-	\ '     ┃   ┗━━━┓    \ \/ / | | ''_ ` _  \    / / / /_| |_ ',
-	\ '     ┃       ┣┓    \  /  | | | | | | |   / /  |___| |_| ',
-	\ '     ┃       ┏┛     \/   |_|_| |_| |_|  /_(_)     |_|   ',
-	\ '     ┗┓┓┏━┳┓┏┛                                          ',
-	\ '      ┃┫┫ ┃┫┫   ',
-	\ '      ┗┻┛ ┗┻┛   ',
-	\]
+"let g:startify_custom_header = []
 let g:startify_bookmarks = [ '~/.vimrc' ]
 let g:startify_files_number = 6
 let g:startify_custom_footer = [
