@@ -3,6 +3,7 @@ syntax on
 set number
 set cursorline
 set t_Co=256
+set backspace=indent,eol,start
 
 
 if has('gui_running')
