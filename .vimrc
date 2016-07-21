@@ -22,7 +22,7 @@ let &colorcolumn="81,".join(range(120,999),",")
 
 filetype plugin indent on
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4 expandtab
 autocmd Filetype erlang setlocal ts=4 sts=4 sw=4 expandtab
 
 "Configure Vundle
@@ -182,6 +182,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height=5
