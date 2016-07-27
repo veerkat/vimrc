@@ -9,9 +9,8 @@ set backspace=indent,eol,start
 if has('gui_running')
 	"let g:winManagerWindowLayout='FileExplorer|TagList'
 	
-	"set background=dark
-	"colorscheme solarized
-	colorscheme molokai
+	set background=light
+	colorscheme solarized
 	set guifont=Inconsolata\ for\ Powerline:h16
 else
 	colorscheme Tomorrow-Night-Eighties
@@ -45,6 +44,7 @@ Plugin 'jimenezrick/vimerl'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'Valloric/YouCompleteMe'
