@@ -124,7 +124,7 @@ let g:startify_files_number = 6
 let g:startify_custom_footer = [
 			\'',
 			\'',
-			\'   I Love the Whole World.',
+			\'   The Unity of Knowledge and Action',
 			\]
 "End
 
