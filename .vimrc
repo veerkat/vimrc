@@ -4,6 +4,7 @@ set number
 set cursorline
 set t_Co=256
 set backspace=indent,eol,start
+set encoding=utf-8
 
 
 if has('gui_running')
